@@ -11,10 +11,16 @@ namespace GuessingGame
 
             Console.WriteLine("choose your difficulty level! CHEATER - EASY - MEDIUM - HARD");
             string levelInput = Console.ReadLine().ToLower();
-
             int numOfChances = 4;
 
-             if (levelInput == "easy")
+            while (levelInput != "easy" && levelInput != "medium" && levelInput != "hard" && levelInput != "cheater")
+            {
+                Console.WriteLine("choose your difficulty level! CHEATER - EASY - MEDIUM - HARD");
+                levelInput = Console.ReadLine().ToLower();
+            }
+
+
+            if (levelInput == "easy")
             {
                 numOfChances = 8;
             }
@@ -27,7 +33,7 @@ namespace GuessingGame
                 numOfChances = 4;
             }
 
-             else if (levelInput == "cheater")
+            else if (levelInput == "cheater")
             {
                 numOfChances = 100;
             }
